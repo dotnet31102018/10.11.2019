@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>My JS</title>
+
+  <!-- Option 1 CDN monified -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+
+  <!-- Option 2 CDN regulr (non-monified) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+
+  <!-- Option 3 downloaded file [non-CDN, local]-->
+  <!-- <script src="jquery.js"></script>-->
+</head>
+
+<body>
+  <hr>
+  <br>
+  <p>X : <input type="number" id="xid" name="xtxt" value="0"></p>
+  <p>Y : <input type="number" id="yid" name="ytxt" value="0"></p>
+  <!-- <button onclick="alert('clicked')">SUM</button> -->
+  <button onclick="dothis()">SUM</button>
+  <br>
+  <div id="result" style="color:green; font-weight:bold;"></div>
+</body>
+
+<script>
+  function dothis() {
+
+    //var x = parseInt(document.getElementById("xid").value)
+    var x = parseInt($('#xid').val())
+    //var y = parseInt(document.getElementById("yid").value)
+    var y = parseInt($('#yid').val())
+    //alert(`${x} + ${y} = ${x + y}`)
+    //document.getElementById("result").innerHTML = `${x} + ${y} = ${x + y}`
+    $("#result").html(`${x} + ${y} = ${x + y}`)
+  }
+</script>
+
+</html>

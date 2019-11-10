@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>My JS</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+</head>
+
+<body>
+  <div id="div1">
+    <p>Hello JQuery!</p>
+    <button onclick="$('#div1').css({ color: 'red', 'font-weight': 'bold' });">CHANGE</button>
+    <button id="btn2">Engage nothing button</button>
+  </div>
+  <script>
+    $(function () {
+
+      //$('#div1').css({ color: 'red', 'font-weight': 'bold' });
+      $("#btn2").on('click', () => {
+        alert('clicked me!')
+      })
+    });
+  </script>
