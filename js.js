@@ -6,7 +6,7 @@ function c(msg)
   console.log(msg)
   return 'hello'
 }
-
+/*
 var arr1 = [ 1, 2, 3]
 var arr2 = [ 1, "word", 3]
 var arr3 = [ "hello", "world", [1,2,3] ]
@@ -21,7 +21,7 @@ arr1.forEach( console.log )
 //arr1.forEach( function(x) { alert(x) } )
 arr1.forEach( function(x) { console.warn(x) } )
 arr1.forEach( (x) => { console.warn(x) } )
-
+*/
 
 function add() {
   //c(arguments[0] + arguments[1])
@@ -98,13 +98,45 @@ function printMembers(o) {
   // will print all members and values
 }
 function create_person(name, age) {
+  // 1
+  var result = {
+    name, 
+    age, 
+    printName() { console.log(this.name) }
+  }
+  return result
+
+  // 1.1
+  return {
+    name, 
+    age, 
+    printName() { console.log(this.name) }
+  }
+  
+  // 2
+  result = { } // or: result = new Object()
+  result.name = name
+  result.age = age
+  result.printName = function() { console.log(this.name) }
+  return result
   
 }
 danny = create_person("danny", 18)
 // danny = {name : "danny", age : 18}
 danny.printName() // will print - danny
 
+var sima = create_person("sima", 22)
+// simma = {name : "sima", age : 22}
+sima.printName() // will print - sima
 
+delete sima.age
 
-
+function Person(name, age) {
+  //this = { } // or: result = new Object() -- auto when using new
+  this.name = name
+  this.age = age
+  this.printName = function() { console.log(this.name) }
+  //return this -- auto when using new
+}
+var moshe = new Person("Moshe", 33) // new = ctor mode will add method name to description
 
